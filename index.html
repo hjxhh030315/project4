@@ -14,13 +14,13 @@
   <header class="hero">
     <h1>Stress Signals: How Physiology Reflects Academic Pressure</h1>
     <p class="subtitle">Explore how wearable data reveals student stress during exams</p>
-    <p class="authors">By Jessica Jiaxin, Neil, Alex, Seichii</p>
+    <p class="authors">By Jessica Jiaxin, Neil Dewan, Alex Evans, Seiichi Nakahira</p>
   </header>
 
   <!-- 2. Introduction -->
   <section id="intro" class="section">
     <h2>Project Overview</h2>
-    <p>This project visualizes real-world stress responses using wearable physiological data collected during midterms and finals. By analyzing heart rate, electrodermal activity, and other signals, we uncover how cognitive stress affects students under pressure.</p>
+    <p>In this project, we explore the relationship between academic stress and physiological responses by analyzing data from wearable sensors collected during midterm and final exams. Our goal is to uncover how cognitive pressure manifests in real time through measurable signals such as heart rate (HR) and electrodermal activity (EDA). This work helps illustrate the invisible toll of academic pressure and offers insight into how stress varies by individual and context.</p>
   </section>
 
   <!-- 3. Visualization Section -->
@@ -30,7 +30,8 @@
     <!-- A. Time-Series Graph -->
     <div class="chart-block">
       <h3>Heart Rate Over Time</h3>
-      <p>Select a group to view average heart rate patterns across exams.</p>
+      <p>This line chart shows the average heart rate of students during exams. Users can filter by gender group to observe trends across male and female students. The time axis spans a 3-hour exam window, and hovering reveals minute-level HR details.
+Design choice: A line chart was chosen for its effectiveness in showing temporal trends, especially for identifying patterns such as pre-exam spikes or post-midpoint plateaus.</p>
       <div class="controls">
         <label for="hr-measure">Group:</label>
         <select id="hr-measure"></select>
@@ -42,7 +43,8 @@
     <!-- B. Scatterplot Graph -->
     <div class="chart-block">
       <h3>Signal Strength vs Exam Score</h3>
-      <p>Select an exam to see the correlation between average signal level and performance.</p>
+      <p>This scatterplot correlates students' average physiological signal levels (e.g., EDA or HR) with their performance on exams. Users can switch between midterm and final data.
+Design choice: We used scatterplots to investigate possible trends between stress indicators and outcomes, encouraging exploration of whether heightened physiological response relates to higher or lower academic performance.</p>
       <div class="controls">
         <label for="exam-measure">Exam:</label>
         <select id="exam-measure"></select>
@@ -56,30 +58,67 @@
   <section id="insights" class="section">
     <h2>What We Learned</h2>
     <ul>
-      <li>Heart rate tends to spike just before the end of each exam.</li>
-      <li>Female students showed greater variability in EDA during finals.</li>
-      <li>Stress patterns differ more by individual than by exam type.</li>
+      <li>Heart rate typically spikes near the end of exams, likely reflecting time pressure or final effort.
+      <li>Female students demonstrated more variability in EDA during finals, suggesting different stress coping mechanisms.
+</li>
+      <li>Physiological responses varied more by individual than by exam type, emphasizing personal stress thresholds.</li>
+</li>
     </ul>
   </section>
 
-  <!-- 5. Dataset & Methods -->
-  <section id="methods" class="section">
-    <h2>Dataset & Methodology</h2>
-    <p>We used the <a href="https://physionet.org/content/wearable-exam-stress/1.0.0/" target="_blank">Wearable Exam Stress Dataset</a> from PhysioNet. Signals were aggregated and cleaned using Python, then visualized with D3.js. Preprocessing involved resampling, timestamp conversion, and grouping by student and exam session.</p>
-  </section>
+ <!-- 5. Dataset & Methods -->
+ <section id="methods" class="section">
+   <h2>Dataset & Methodology</h2>
+   <p>
+     We used the publicly available 
+     <a href="https://physionet.org/content/wearable-exam-stress/1.0.0/" target="_blank">
+       Wearable Exam Stress Dataset</a> from PhysioNet, which includes continuous recordings of 
+     heart rate (HR) and electrodermal activity (EDA) collected during real university exams.
+   </p>
+   <p>
+     Data processing steps included:
+   </p>
+   <ul>
+     <li>Resampling data for consistent time intervals</li>
+     <li>Converting timestamps to relative exam time</li>
+     <li>Grouping by student and exam type</li>
+     <li>Calculating averages and ranges for visualization</li>
+   </ul>
+   <p>
+     All preprocessing was done in Python using <code>Pandas</code> and <code>NumPy</code>. 
+     The visualizations were developed with <code>D3.js</code> to support interactivity and dynamic exploration.
+   </p>
+ </section>
 
-  <!-- 6. About the Team -->
+ <!-- 6. Limitations & Considerations -->
+ <section id="limitations" class="section">
+   <h2>Limitations & Considerations</h2>
+   <ul>
+     <li>
+       The dataset lacks baseline readings outside of exams, making it difficult to compare to “normal” physiological states.
+     </li>
+     <li>
+       Movement artifacts or environmental factors (e.g., room temperature) may influence signal accuracy.
+     </li>
+    <li>
+       Sample size and demographic variety are limited, so generalizations should be made cautiously.
+     </li>
+   </ul>
+ </section>
+
+
+  <!-- 7. About the Team -->
   <section id="team" class="section">
     <h2>About the Team</h2>
     <p>We are a group of students passionate about data storytelling. This project was built collaboratively as part of our final visualization course assignment.</p>
   </section>
 
-  <!-- 7. Footer -->
+  <!-- 8. Footer -->
   <footer class="footer">
     <p>© 2025 | Team Jessica Jiaxin He • <a href="https://github.com/hjxhh030315?tab=repositories">GitHub Repo</a></p>
-    <p>© 2025 | Team Neil • <a href="https://github.com/your-repo-link">GitHub Repo</a></p>
-    <p>© 2025 | Team Alex • <a href="https://github.com/your-repo-link">GitHub Repo</a></p>
-    <p>© 2025 | Team Seichii • <a href="https://github.com/your-repo-link">GitHub Repo</a></p>
+    <p>© 2025 | Team Neil Dewan • <a href="https://github.com/your-repo-link">GitHub Repo</a></p>
+    <p>© 2025 | Team Alex Evans • <a href="https://github.com/your-repo-link">GitHub Repo</a></p>
+    <p>© 2025 | Team Seiichi Nakahira • <a href="https://github.com/your-repo-link">GitHub Repo</a></p>
   </footer>
 
   <!-- Scripts -->
